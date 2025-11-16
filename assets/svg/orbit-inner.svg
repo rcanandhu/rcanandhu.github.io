@@ -1,0 +1,20 @@
+<svg width="232" height="232" viewBox="0 0 232 232" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="232" height="232" rx="116" fill="url(#paint0_radial_889_1042)"/>
+<rect x="1" y="1" width="230" height="230" rx="115" stroke="#AAEDC8" stroke-opacity="0.03" stroke-width="2"/>
+<rect x="1" y="1" width="230" height="230" rx="115" stroke="url(#paint1_linear_889_1042)" stroke-opacity="0.4" stroke-width="2"/>
+<rect x="1" y="1" width="230" height="230" rx="115" stroke="url(#paint2_linear_889_1042)" stroke-opacity="0.4" stroke-width="2"/>
+<defs>
+<radialGradient id="paint0_radial_889_1042" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(116 116) rotate(90) scale(116)">
+<stop stop-color="#1A1C1F"/>
+<stop offset="1" stop-color="#25312B"/>
+</radialGradient>
+<linearGradient id="paint1_linear_889_1042" x1="40.1199" y1="3.85212e-07" x2="102.5" y2="71" gradientUnits="userSpaceOnUse">
+<stop stop-color="#AAEDC8"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint2_linear_889_1042" x1="145" y1="161.5" x2="192.5" y2="218.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="#AAEDC8"/>
+</linearGradient>
+</defs>
+</svg>

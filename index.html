@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>rcanandhu — Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Google Font: Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container">
+      <a class="logo" href="/" aria-label="rcanandhu homepage">
+        <img src="assets/icons/logo.svg" alt="rcanandhu" class="logo-img">
+      </a>
+
+      <nav class="nav-group" aria-label="Main navigation">
+        <a href="#" class="nav-item active" aria-current="page">Home</a>
+        <a href="#" class="nav-item">Work</a>
+        <a href="#" class="nav-item">About</a>
+        <a href="#" class="nav-item">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-action nav-mail" href="mailto:anandhurc@example.com" aria-label="Email me">
+          <img src="assets/icons/mail.svg" alt="" class="nav-icon" aria-hidden="true">
+        </a>
+
+        <a class="nav-action btn-resume" href="assets/resume/Ananthu-Resume.pdf" download aria-label="Download resume">
+          <span class="resume-text">Resume</span>
+          <img src="assets/icons/download.svg" alt="" class="nav-icon" aria-hidden="true">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+<section class="hero">
+ <!-- ORBIT SYSTEM -->
+<div class="orbit-system">
+  <div class="orbit-container">
+
+    <!-- OUTER RING: 4 PILLS (CCW) -->
+    <div class="orbit-rotator orbit-ccw" data-orbit="ccw">
+      
+      <!-- Designer -->
+      <div class="pill pill-56" data-angle="0" data-tooltip="designer">
+          <span class="icon-wrapper" data-size="46">
+            <img src="assets/images/icon2.png" alt="designer">
+          </span>
+      </div>
+
+      <!-- Photographer -->
+      <div class="pill pill-56" data-angle="90" data-tooltip="photographer">
+          <span class="icon-wrapper" data-size="48">
+            <img src="assets/images/icon4.png" alt="photographer">
+          </span>
+      </div>
+
+      <!-- Love -->
+      <div class="pill pill-56" data-angle="180" data-tooltip="love">
+          <span class="icon-wrapper" data-size="32">
+            <img src="assets/images/icon5.png" alt="love">
+          </span>
+      </div>
+
+      <!-- Coffee -->
+      <div class="pill pill-56" data-angle="270" data-tooltip="coffee">
+          <span class="icon-wrapper" data-size="38">
+            <img src="assets/images/icon7.png" alt="coffee">
+          </span>
+      </div>
+
+    </div>
+
+    <!-- INNER RING: 3 PILLS (CW) -->
+    <div class="orbit-rotator orbit-cw" data-orbit="cw">
+
+      <!-- Figma -->
+      <div class="pill pill-64" data-angle="0" data-tooltip="figma">
+          <span class="icon-wrapper" data-size="52">
+            <img src="assets/images/icon1.png" alt="figma">
+          </span>
+      </div>
+
+      <!-- Artist -->
+      <div class="pill pill-64" data-angle="120" data-tooltip="artist">
+          <span class="icon-wrapper" data-size="31">
+            <img src="assets/images/icon3.png" alt="artist">
+          </span>
+      </div>
+
+      <!-- Traveller -->
+      <div class="pill pill-64" data-angle="240" data-tooltip="traveller">
+          <span class="icon-wrapper" data-size="44">
+            <img src="assets/images/icon6.png" alt="traveller">
+          </span>
+      </div>
+
+    </div>
+
+    <!-- RINGS -->
+    <div class="orbit-outer"></div>
+    <div class="orbit-inner"></div>
+
+    <!-- AVATAR -->
+    <div class="avatar-wrapper">
+      <img src="assets/images/avatar.png" alt="Rcanandhu" class="avatar">
+    </div>
+
+  </div>
+</div>
+
+  <!-- HERO TEXT -->
+  <div class="hero-content">
+    <h1>
+      Welcome to my corner on the internet,<br />
+      you’ll find experiments, projects and a<br />
+      little bit of me in every detail
+    </h1>
+  </div>
+</section>
+
+<!-- WORKS SECTION -->
+<section class="works-section" id="works">
+  <h2 class="works-title">WORKS</h2>
+  
+  <div class="works-list">
+    <!-- Work Card 1 -->
+    <article class="work-card">
+      <div class="work-card-image">
+        <img src="assets/images/work-pricing.png" alt="SaaS Pricing Page Redesign" />
+      </div>
+      <div class="work-card-info">
+        <h3 class="work-card-title">SaaS Pricing Page Redesign</h3>
+        <p class="work-card-desc">This project aims to redesign the SaaS pricing page to boost user engagement and conversion rates. By creating a more intuitive layout and clear messaging.</p>
+        <a href="#" class="work-card-link">View project</a>
+      </div>
+    </article>
+
+    <!-- Work Card 2 -->
+    <article class="work-card">
+      <div class="work-card-image">
+        <img src="assets/images/work-quote.png" alt="Quote to Order Workflow" />
+      </div>
+      <div class="work-card-info">
+        <h3 class="work-card-title">Quote to Order Workflow</h3>
+        <p class="work-card-desc">This project aims to redesign our SaaS pricing page to improve user experience and boost conversion rates.</p>
+        <a href="#" class="work-card-link">View project</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+  <!-- Optional JS -->
+  <script src="js/main.js"></script>
+</body>
+
+<div class="custom-scrollbar-float">
+  <div class="scrollbar-track">
+    <!-- Section markers (big) and minor ticks (small) will be injected here -->
+    <div class="scrollbar-ticks"></div>
+    <div class="scrollbar-thumb"></div>
+  </div>
+</div>
+
+</html>
