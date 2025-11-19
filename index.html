@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -131,34 +132,60 @@
 
 <!-- WORKS SECTION -->
 <section class="works-section" id="works">
-  <h2 class="works-title">WORKS</h2>
+  <div class="works-title-container">
+    <h2 class="works-title">WORKS</h2>
+  </div>
   
-  <div class="works-list">
-    <!-- Work Card 1 -->
-    <article class="work-card">
-      <div class="work-card-image">
-        <img src="assets/images/work-pricing.png" alt="SaaS Pricing Page Redesign" />
+  <!-- Work Card 1 (full ornaments) -->
+  <div class="works-card-wrapper">
+    <span class="works-ornament-square top-left"></span>
+    <span class="works-ornament-square top-right"></span>
+    <span class="works-ornament-square top-joint"></span>
+    <span class="works-ornament-square bottom-left"></span>
+    <span class="works-ornament-square bottom-right"></span>
+    <span class="works-ornament-square bottom-joint"></span>
+    
+     <div class="work-card-img-container">
+      <div class="work-card-img-padding">
+        <div class="work-card-image">
+        <img src="assets/images/work-pricing.png" alt="Quote to Order Workflow" />
+        </div>
       </div>
-      <div class="work-card-info">
+    </div>
+    
+    <div class="work-card-info-container">
+      <div class="work-card-text">
         <h3 class="work-card-title">SaaS Pricing Page Redesign</h3>
         <p class="work-card-desc">This project aims to redesign the SaaS pricing page to boost user engagement and conversion rates. By creating a more intuitive layout and clear messaging.</p>
-        <a href="#" class="work-card-link">View project</a>
       </div>
-    </article>
-
-    <!-- Work Card 2 -->
-    <article class="work-card">
-      <div class="work-card-image">
+      <a href="#" class="work-card-link">View project</a>
+    </div>
+  </div>
+  
+  <!-- Work Card 2 (only bottom ornaments as per your instructions) -->
+  <div class="works-card-wrapper">
+    <span class="works-ornament-square bottom-left"></span>
+    <span class="works-ornament-square bottom-right"></span>
+    <span class="works-ornament-square bottom-joint"></span>
+    
+    <div class="work-card-img-container">
+      <div class="work-card-img-padding">
+        <div class="work-card-image">
         <img src="assets/images/work-quote.png" alt="Quote to Order Workflow" />
+        </div>
       </div>
-      <div class="work-card-info">
+    </div>
+    
+    <div class="work-card-info-container">
+      <div class="work-card-text">
         <h3 class="work-card-title">Quote to Order Workflow</h3>
         <p class="work-card-desc">This project aims to redesign our SaaS pricing page to improve user experience and boost conversion rates.</p>
-        <a href="#" class="work-card-link">View project</a>
       </div>
-    </article>
+      <a href="#" class="work-card-link">View project</a>
+    </div>
   </div>
-</section>
+
+  <div class="works-end-border"></div>
 
   <!-- Optional JS -->
   <script src="js/main.js"></script>
