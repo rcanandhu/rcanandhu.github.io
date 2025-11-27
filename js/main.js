@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const wrapper = pill.querySelector('.icon-wrapper');
             if (!wrapper) return;
             const sizeKey = wrapper.dataset.size;
-            const sizeMap = { '52':52, '46':46, '32':32, '48':48, '31':36, '44':44, '38':38 };
+            const sizeMap = { '52': 52, '46': 46, '32': 32, '48': 48, '31': 36, '44': 44, '38': 38 };
             const size = sizeMap[sizeKey] || 40;
             wrapper.style.setProperty('--icon-size', size);
         });
@@ -71,7 +71,7 @@ const sectionNames = {
     about: "About",
     contact: "Contact"
 };
-const sectionIds = ['hero','works']; // Add more IDs if needed
+const sectionIds = ['hero', 'works']; // Add more IDs if needed
 
 function getSectionOffsets() {
     // Build the array of vertical scroll offsets for each section
@@ -81,7 +81,7 @@ function getSectionOffsets() {
     });
 }
 
-function buildTickList(innerTicksPerSection=3) {
+function buildTickList(innerTicksPerSection = 3) {
     // Returns an array of {type, section, groupIndex} for ticks
     let ticks = [];
     for (let s = 0; s < sectionIds.length; s++) {
@@ -132,12 +132,12 @@ function getScrollTickIndex(ticks, sectionOffsets) {
     for (let i = 0; i < sectionOffsets.length - 1; i++) {
         if (scrollY < sectionOffsets[i + 1]) {
             // Find tick index by group
-            const gTicks = buildTickList().filter(t=>t.groupIndex===i);
-            const groupStart = buildTickList().findIndex(t=>t.groupIndex===i);
+            const gTicks = buildTickList().filter(t => t.groupIndex === i);
+            const groupStart = buildTickList().findIndex(t => t.groupIndex === i);
             // Map scroll position within this section to inner ticks
-            const sectionStart = sectionOffsets[i], sectionEnd = sectionOffsets[i+1];
-            const pct = Math.min(1, Math.max(0, (scrollY-sectionStart)/(sectionEnd-sectionStart||1)));
-            const tickIdxInGroup = Math.round(pct * (gTicks.length-1));
+            const sectionStart = sectionOffsets[i], sectionEnd = sectionOffsets[i + 1];
+            const pct = Math.min(1, Math.max(0, (scrollY - sectionStart) / (sectionEnd - sectionStart || 1)));
+            const tickIdxInGroup = Math.round(pct * (gTicks.length - 1));
             return groupStart + tickIdxInGroup;
         }
     }
@@ -147,7 +147,7 @@ function getScrollTickIndex(ticks, sectionOffsets) {
 
 function setupTickTooltips() {
     let tooltip;
-    document.body.addEventListener('mouseover', function(e) {
+    document.body.addEventListener('mouseover', function (e) {
         const group = e.target.closest('.tick-group');
         if (group && group.dataset.tooltip) {
             tooltip = document.createElement('div');
@@ -155,12 +155,12 @@ function setupTickTooltips() {
             tooltip.textContent = group.dataset.tooltip;
             document.body.appendChild(tooltip);
             const rect = group.getBoundingClientRect();
-            tooltip.style.left = rect.left + rect.width/2 + "px";
+            tooltip.style.left = rect.left + rect.width / 2 + "px";
             tooltip.style.top = (rect.top - 32) + "px";
             tooltip.style.transform = "translateX(-50%)";
         }
     });
-    document.body.addEventListener('mouseout', function(e) {
+    document.body.addEventListener('mouseout', function (e) {
         if (tooltip) { tooltip.remove(); tooltip = null; }
     });
 }
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 window.addEventListener('resize', renderScrollbarTicks);
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     const group = e.target.closest('.tick-group.clickable');
     if (group) {
         const id = group.dataset.section;
@@ -207,23 +207,45 @@ document.addEventListener('click', function(e) {
 });
 
 document.querySelectorAll('.pill').forEach(pill => {
-  pill.addEventListener('mouseenter', (e) => {
-    // Remove existing tooltip if present
-    const prev = pill.querySelector('.orbit-tooltip');
-    if (prev) prev.remove();
+    pill.addEventListener('mouseenter', (e) => {
+        // Remove existing tooltip if present
+        const prev = pill.querySelector('.orbit-tooltip');
+        if (prev) prev.remove();
 
-    const text = pill.getAttribute('data-tooltip') || '';
-    if (!text) return;
+        const text = pill.getAttribute('data-tooltip') || '';
+        if (!text) return;
 
-    const tooltip = document.createElement('div');
-    tooltip.className = 'orbit-tooltip';
-    tooltip.textContent = text;
-    pill.appendChild(tooltip);
-  });
+        const tooltip = document.createElement('div');
+        tooltip.className = 'orbit-tooltip';
+        tooltip.textContent = text;
+        pill.appendChild(tooltip);
+    });
 
-  pill.addEventListener('mouseleave', () => {
-    const tooltip = pill.querySelector('.orbit-tooltip');
-    if (tooltip) tooltip.remove();
-  });
+    pill.addEventListener('mouseleave', () => {
+        const tooltip = pill.querySelector('.orbit-tooltip');
+        if (tooltip) tooltip.remove();
+    });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.skills-pills-scroll').forEach(scroll => {
+    const row = scroll.querySelector('.pills-row');
+    function setMarquee() {
+      const width = row.offsetWidth;
+      scroll.style.width = width * 2 + 'px';
+      scroll.style.minWidth = width * 2 + 'px';
+
+      // Animate with explicit pixel distance for perfect repeat
+      scroll.animate([
+        { transform: 'translateX(0)' },
+        { transform: `translateX(-${width}px)` }
+      ], {
+        duration: 18000,
+        iterations: Infinity,
+        easing: 'linear'
+      });
+    }
+    setMarquee();
+    window.addEventListener('resize', setMarquee);
+  });
+});

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -11,9 +12,11 @@
   <!-- Google Font: Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -44,152 +47,171 @@
   </header>
 
   <!-- HERO SECTION -->
-<section class="hero">
- <!-- ORBIT SYSTEM -->
-<div class="orbit-system">
-  <div class="orbit-container">
+  <section class="hero">
+    <!-- ORBIT SYSTEM -->
+    <div class="orbit-system">
+      <div class="orbit-container">
 
-    <!-- OUTER RING: 4 PILLS (CCW) -->
-    <div class="orbit-rotator orbit-ccw" data-orbit="ccw">
-      
-      <!-- Designer -->
-      <div class="pill pill-56" data-angle="0" data-tooltip="designer">
-          <span class="icon-wrapper" data-size="46">
-            <img src="assets/images/icon2.png" alt="designer">
-          </span>
+        <!-- OUTER RING: 4 PILLS (CCW) -->
+        <div class="orbit-rotator orbit-ccw" data-orbit="ccw">
+
+          <!-- Designer -->
+          <div class="pill pill-56" data-angle="0" data-tooltip="designer">
+            <span class="icon-wrapper" data-size="46">
+              <img src="assets/images/icon2.png" alt="designer">
+            </span>
+          </div>
+
+          <!-- Photographer -->
+          <div class="pill pill-56" data-angle="90" data-tooltip="photographer">
+            <span class="icon-wrapper" data-size="48">
+              <img src="assets/images/icon4.png" alt="photographer">
+            </span>
+          </div>
+
+          <!-- Love -->
+          <div class="pill pill-56" data-angle="180" data-tooltip="love">
+            <span class="icon-wrapper" data-size="32">
+              <img src="assets/images/icon5.png" alt="love">
+            </span>
+          </div>
+
+          <!-- Coffee -->
+          <div class="pill pill-56" data-angle="270" data-tooltip="coffee">
+            <span class="icon-wrapper" data-size="38">
+              <img src="assets/images/icon7.png" alt="coffee">
+            </span>
+          </div>
+
+        </div>
+
+        <!-- INNER RING: 3 PILLS (CW) -->
+        <div class="orbit-rotator orbit-cw" data-orbit="cw">
+
+          <!-- Figma -->
+          <div class="pill pill-64" data-angle="0" data-tooltip="figma">
+            <span class="icon-wrapper" data-size="52">
+              <img src="assets/images/icon1.png" alt="figma">
+            </span>
+          </div>
+
+          <!-- Artist -->
+          <div class="pill pill-64" data-angle="120" data-tooltip="artist">
+            <span class="icon-wrapper" data-size="31">
+              <img src="assets/images/icon3.png" alt="artist">
+            </span>
+          </div>
+
+          <!-- Traveller -->
+          <div class="pill pill-64" data-angle="240" data-tooltip="traveller">
+            <span class="icon-wrapper" data-size="44">
+              <img src="assets/images/icon6.png" alt="traveller">
+            </span>
+          </div>
+
+        </div>
+
+        <!-- RINGS -->
+        <div class="orbit-outer"></div>
+        <div class="orbit-inner"></div>
+
+        <!-- AVATAR -->
+        <div class="avatar-wrapper">
+          <img src="assets/images/avatar.png" alt="Rcanandhu" class="avatar">
+        </div>
+
       </div>
-
-      <!-- Photographer -->
-      <div class="pill pill-56" data-angle="90" data-tooltip="photographer">
-          <span class="icon-wrapper" data-size="48">
-            <img src="assets/images/icon4.png" alt="photographer">
-          </span>
-      </div>
-
-      <!-- Love -->
-      <div class="pill pill-56" data-angle="180" data-tooltip="love">
-          <span class="icon-wrapper" data-size="32">
-            <img src="assets/images/icon5.png" alt="love">
-          </span>
-      </div>
-
-      <!-- Coffee -->
-      <div class="pill pill-56" data-angle="270" data-tooltip="coffee">
-          <span class="icon-wrapper" data-size="38">
-            <img src="assets/images/icon7.png" alt="coffee">
-          </span>
-      </div>
-
     </div>
 
-    <!-- INNER RING: 3 PILLS (CW) -->
-    <div class="orbit-rotator orbit-cw" data-orbit="cw">
+    <!-- HERO TEXT -->
+    <div class="hero-content">
+      <h1>
+        Welcome to my corner on the internet,<br />
+        you’ll find experiments, projects and a<br />
+        little bit of me in every detail
+      </h1>
+    </div>
+  </section>
 
-      <!-- Figma -->
-      <div class="pill pill-64" data-angle="0" data-tooltip="figma">
-          <span class="icon-wrapper" data-size="52">
-            <img src="assets/images/icon1.png" alt="figma">
-          </span>
-      </div>
-
-      <!-- Artist -->
-      <div class="pill pill-64" data-angle="120" data-tooltip="artist">
-          <span class="icon-wrapper" data-size="31">
-            <img src="assets/images/icon3.png" alt="artist">
-          </span>
-      </div>
-
-      <!-- Traveller -->
-      <div class="pill pill-64" data-angle="240" data-tooltip="traveller">
-          <span class="icon-wrapper" data-size="44">
-            <img src="assets/images/icon6.png" alt="traveller">
-          </span>
-      </div>
-
+  <!-- WORKS SECTION -->
+  <section class="works-section" id="works">
+    <div class="works-title-container">
+      <h2 class="works-title">WORKS</h2>
     </div>
 
-    <!-- RINGS -->
-    <div class="orbit-outer"></div>
-    <div class="orbit-inner"></div>
+    <!-- Work Card 1 (full ornaments) -->
+    <div class="works-card-wrapper">
+      <span class="works-ornament-square top-left"></span>
+      <span class="works-ornament-square top-right"></span>
+      <span class="works-ornament-square top-joint"></span>
+      <span class="works-ornament-square bottom-left"></span>
+      <span class="works-ornament-square bottom-right"></span>
+      <span class="works-ornament-square bottom-joint"></span>
 
-    <!-- AVATAR -->
-    <div class="avatar-wrapper">
-      <img src="assets/images/avatar.png" alt="Rcanandhu" class="avatar">
+      <div class="work-card-img-container">
+        <div class="work-card-image">
+          <img src="assets/images/work-pricing.png" alt="Quote to Order Workflow" />
+        </div>
+      </div>
+
+      <div class="work-card-info-container">
+        <div class="work-card-text">
+          <h3 class="work-card-title">SaaS Pricing Page Redesign</h3>
+          <p class="work-card-desc">This project aims to redesign the SaaS pricing page to boost user engagement and
+            conversion rates. By creating a more intuitive layout and clear messaging.</p>
+        </div>
+        <a href="#" class="work-card-link">View project</a>
+      </div>
     </div>
 
+    <!-- Work Card 2 (only bottom ornaments as per your instructions) -->
+    <div class="works-card-wrapper">
+      <span class="works-ornament-square bottom-left"></span>
+      <span class="works-ornament-square bottom-right"></span>
+      <span class="works-ornament-square bottom-joint"></span>
+
+      <div class="work-card-img-container">
+        <div class="work-card-image">
+          <img src="assets/images/work-quote.png" alt="Quote to Order Workflow" />
+        </div>
+      </div>
+
+      <div class="work-card-info-container">
+        <div class="work-card-text">
+          <h3 class="work-card-title">Quote to Order Workflow</h3>
+          <p class="work-card-desc">This project aims to redesign our SaaS pricing page to improve user experience and
+            boost conversion rates.</p>
+        </div>
+        <a href="#" class="work-card-link">View project</a>
+      </div>
+    </div>
+
+    <div class="works-end-border"></div>
+
+
+    <!-- Optional JS -->
+    <script src="js/main.js"></script>
+</body>
+
+<!-- I BELIEVE SECTION -->
+<section class="ibelieve-section">
+  <div class="ibelieve-section-title">
+    I believe
   </div>
-</div>
-
-  <!-- HERO TEXT -->
-  <div class="hero-content">
-    <h1>
-      Welcome to my corner on the internet,<br />
-      you’ll find experiments, projects and a<br />
-      little bit of me in every detail
-    </h1>
+  <div class="ibelieve-container-outer">
+    <div class="ibelieve-container-inner">
+      <!-- Corner Ornaments -->
+      <span class="ibelieve-ornament top-left"></span>
+      <span class="ibelieve-ornament top-right"></span>
+      <span class="ibelieve-ornament bottom-left"></span>
+      <span class="ibelieve-ornament bottom-right"></span>
+      <div class="ibelieve-text">
+        I believe great design means solving real problems, not just adding beauty. It’s about clarity, empathy, and
+        empowering users through seamless, inclusive experiences.
+      </div>
+    </div>
   </div>
 </section>
-
-<!-- WORKS SECTION -->
-<section class="works-section" id="works">
-  <div class="works-title-container">
-    <h2 class="works-title">WORKS</h2>
-  </div>
-  
-  <!-- Work Card 1 (full ornaments) -->
-  <div class="works-card-wrapper">
-    <span class="works-ornament-square top-left"></span>
-    <span class="works-ornament-square top-right"></span>
-    <span class="works-ornament-square top-joint"></span>
-    <span class="works-ornament-square bottom-left"></span>
-    <span class="works-ornament-square bottom-right"></span>
-    <span class="works-ornament-square bottom-joint"></span>
-    
-     <div class="work-card-img-container">
-      <div class="work-card-img-padding">
-        <div class="work-card-image">
-        <img src="assets/images/work-pricing.png" alt="Quote to Order Workflow" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="work-card-info-container">
-      <div class="work-card-text">
-        <h3 class="work-card-title">SaaS Pricing Page Redesign</h3>
-        <p class="work-card-desc">This project aims to redesign the SaaS pricing page to boost user engagement and conversion rates. By creating a more intuitive layout and clear messaging.</p>
-      </div>
-      <a href="#" class="work-card-link">View project</a>
-    </div>
-  </div>
-  
-  <!-- Work Card 2 (only bottom ornaments as per your instructions) -->
-  <div class="works-card-wrapper">
-    <span class="works-ornament-square bottom-left"></span>
-    <span class="works-ornament-square bottom-right"></span>
-    <span class="works-ornament-square bottom-joint"></span>
-    
-    <div class="work-card-img-container">
-      <div class="work-card-img-padding">
-        <div class="work-card-image">
-        <img src="assets/images/work-quote.png" alt="Quote to Order Workflow" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="work-card-info-container">
-      <div class="work-card-text">
-        <h3 class="work-card-title">Quote to Order Workflow</h3>
-        <p class="work-card-desc">This project aims to redesign our SaaS pricing page to improve user experience and boost conversion rates.</p>
-      </div>
-      <a href="#" class="work-card-link">View project</a>
-    </div>
-  </div>
-
-  <div class="works-end-border"></div>
-
-  <!-- Optional JS -->
-  <script src="js/main.js"></script>
-</body>
 
 <div class="custom-scrollbar-float">
   <div class="scrollbar-track">
@@ -198,5 +220,157 @@
     <div class="scrollbar-thumb"></div>
   </div>
 </div>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+  <h2 class="about-section-title">WHAT I BRING TO THE TABLE</h2>
+  <div class="about-bento">
+    <!-- Left stripes -->
+    <div class="bento-side">
+      <div class="bento-rect tall"></div>
+      <div class="bento-rect short"></div>
+    </div>
+
+    <!-- Left column (Avatar, Map) -->
+    <div class="bento-vertical">
+      <!-- Avatar Card -->
+      <div class="bento-card avatar-card gradient">
+        <img src="assets/images/avatar2.png" alt="Your portrait" class="avatar-img" />
+        <div class="avatar-text-container">
+          <p class="avatar-desc">UX Designer, passionate about solving complex problems with design.</p>
+        </div>
+      </div>
+      <!-- Map Card -->
+      <div class="bento-card map-card gradient">
+        <img src="assets/images/kochi-map-dark.png" alt="Map of Kochi, Kerala" class="map-img" />
+        <p class="map-desc">Kochi, Kerala</p>
+      </div>
+    </div>
+
+    <!-- Center columns (Experience, Skills, Tools, Projects) -->
+    <div class="bento-vertical bento-wide">
+      <div class="bento-row">
+        <!-- Experience Card -->
+        <div class="bento-card-outer bento-top">
+          <div class="bento-card exp-card gradient" tabindex="0">
+            <div class="exp-illustration-wrap">
+              <img src="assets/svg/coin-front.svg" alt="Coin front" class="coin-static" />
+              <img src="assets/svg/sparkle.svg" alt="" aria-hidden="true" class="sparkle-svg sparkle-large" />
+              <img src="assets/svg/sparkle.svg" alt="" aria-hidden="true" class="sparkle-svg sparkle-medium" />
+              <img src="assets/svg/sparkle.svg" alt="" aria-hidden="true" class="sparkle-svg sparkle-small" />
+            </div>
+            <div class="exp-info">
+              <div class="exp-title">Years of Experience</div>
+              <div class="exp-desc">E-Commerce, ERP & SaaS</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Card -->
+        <div class="bento-card-outer bento-top">
+          <div class="bento-card skills-card gradient" tabindex="0">
+            <h4 class="skills-title">Skills</h4>
+
+            <!-- Line 1 Scrolling Pills Container -->
+            <div class="skills-pills-container" tabindex="0" aria-label="Scrolling skills list line 1">
+              <div class="skills-pills-scroll">
+                <div class="pills-row">
+                  <span class="skill-pill style-1">Interaction Design</span>
+                  <span class="skill-pill style-2">UX Research</span>
+                  <span class="skill-pill style-3">Product Design</span>
+                  <span class="skill-pill style-4">Analytics</span>
+                  <span class="skill-pill style-5">Visual Design</span>
+                  <span class="skill-pill style-6">Responsive Design</span>
+                </div>
+                <!-- Duplicate set for infinity -->
+                <div class="pills-row">
+                  <span class="skill-pill style-1">Interaction Design</span>
+                  <span class="skill-pill style-2">UX Research</span>
+                  <span class="skill-pill style-3">Product Design</span>
+                  <span class="skill-pill style-4">Analytics</span>
+                  <span class="skill-pill style-5">Visual Design</span>
+                  <span class="skill-pill style-6">Responsive Design</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Line 2 Scrolling Pills Container -->
+            <div class="skills-pills-container" tabindex="0" aria-label="Scrolling skills list line 2"
+              style="margin-top:8px;">
+              <div class="skills-pills-scroll">
+                <div class="pills-row">
+                  <span class="skill-pill style-3">User Testing</span>
+                  <span class="skill-pill style-4">Wireframing</span>
+                  <span class="skill-pill style-5">Prototyping</span>
+                  <span class="skill-pill style-6">Information Architecture</span>
+                  <span class="skill-pill style-1">Content Strategy</span>
+                  <span class="skill-pill style-2">Accessibility</span>
+                </div>
+                <!-- Duplicate set for infinity -->
+                <div class="pills-row">
+                  <span class="skill-pill style-3">User Testing</span>
+                  <span class="skill-pill style-4">Wireframing</span>
+                  <span class="skill-pill style-5">Prototyping</span>
+                  <span class="skill-pill style-6">Information Architecture</span>
+                  <span class="skill-pill style-1">Content Strategy</span>
+                  <span class="skill-pill style-2">Accessibility</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="bento-row">
+        <!-- Tools Card -->
+        <div class="bento-card-outer bento-bottom">
+          <div class="bento-card tools-card gradient">
+            <h4 class="tools-title">Tools</h4>
+            <div class="tools-icons">
+              <img src="assets/icons/figma.svg" alt="Figma" />
+              <img src="assets/icons/ai.svg" alt="Illustrator" />
+              <img src="assets/icons/sketch.svg" alt="Sketch" />
+              <img src="assets/icons/miro.svg" alt="Miro" />
+              <img src="assets/icons/ps.svg" alt="Photoshop" />
+              <img src="assets/icons/xd.svg" alt="Adobe XD" />
+              <img src="assets/icons/trello.svg" alt="Trello" />
+              <img src="assets/icons/notion.svg" alt="Notion" />
+            </div>
+          </div>
+        </div>
+        <div class="bento-card-outer bento-bottom">
+          <div class="bento-card projects-card gradient">
+            <div class="projects-info-container">
+              <div class="projects-count-row">
+                <span class="projects-count-num">30</span>
+                <span class="projects-count-plus">+</span>
+              </div>
+              <p class="projects-text">Projects Completed</p>
+            </div>
+
+            <!-- Static light rays -->
+            <div class="projects-ray-effect"></div>
+
+            <!-- Travelling sparkle lights -->
+            <div class="projects-spark spark-1"></div>
+            <div class="projects-spark spark-2"></div>
+            <div class="projects-spark spark-3"></div>
+            <div class="projects-spark spark-4"></div>
+            <div class="projects-spark spark-5"></div>
+
+            <img src="assets/images/projects.png" alt="Projects Completed" class="projects-img" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right stripes -->
+    <div class="bento-side">
+      <div class="bento-rect tall"></div>
+      <div class="bento-rect short"></div>
+    </div>
+  </div>
+</section>
 
 </html>
