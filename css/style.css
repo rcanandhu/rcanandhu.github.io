@@ -123,11 +123,16 @@ html {
    ------------------------- */
 html,
 body {
-  min-height: 100%;
+  display: block;                 /* was flex */
+  flex-direction: column;         /* remove or comment out */
   background: var(--color-surface);
   color: var(--color-text-primary);
   font-family: "Space Grotesk", system-ui, sans-serif;
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  height: auto;      /* let height be content-driven */
+  min-height: 0;
 }
 
 .container {
@@ -344,14 +349,192 @@ header.navbar .container {
   font-weight: 400;
   line-height: 1.2;
   color: var(--color-text-primary);
+  margin-top: 60px;
 }
 
-@media (max-width: 720px) {
+
+/* Tablet hero: 768–1199px */
+@media (max-width: 1200px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: var(--header-height, 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .orbit-system {
+    position: static;
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  /* slightly smaller than desktop so it fits 1200 and below */
+  .orbit-container {
+    position: relative;
+    margin: 0 auto;
+    width: 360px;
+    height: 360px;
+  }
+
+  .orbit-outer {
+    width: 360px;
+    height: 360px;
+  }
+
+  .orbit-inner {
+    width: 250px;
+    height: 250px;
+  }
+
+  .avatar-wrapper .avatar {
+    width: 118px;
+    height: auto;
+  }
+
+  .pill.pill-64 .icon-wrapper,
+  .pill.pill-56 .icon-wrapper {
+    transform: scale(0.85);
+  }
+
+  /* keep text clearly below the orbit */
+  .hero-content {
+    position: static;             /* in normal flow */
+    width: 100%;
+    max-width: 800px;
+    padding-top: 24px;
+    text-align: center;
+    z-index: 1;
+  }
+
   .hero-content h1 {
-    font-size: 28px;
-    line-height: 1.25;
+    font-size: 32px;
+    line-height: 1.35;
+    font-weight: 400;
   }
 }
+
+/* Mobile hero */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: var(--header-height, 72px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .orbit-system {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .orbit-container {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbit-outer {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbit-inner {
+    width: 220px;
+    height: 220px;
+  }
+
+  .avatar-wrapper .avatar {
+    width: 140px;
+    height: auto;
+  }
+
+  .pill.pill-64 .icon-wrapper,
+  .pill.pill-56 .icon-wrapper {
+    transform: scale(0.8);
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 40px 24px 48px 24px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 500;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: var(--header-height, 72px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .orbit-system {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .orbit-container {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbit-outer {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbit-inner {
+    width: 220px;
+    height: 220px;
+  }
+
+  .avatar-wrapper .avatar {
+    width: 140px;
+    height: auto;
+  }
+
+  .pill.pill-64 .icon-wrapper,
+  .pill.pill-56 .icon-wrapper {
+    transform: scale(0.8);
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 40px 24px 48px 24px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 500;
+  }
+}
+
 
 /* -------------------------
    ORBIT SYSTEM
@@ -764,7 +947,7 @@ header.navbar .container {
 /* Empty border container below all works */
 .works-end-border {
   position: relative;
-  border-top: 1.5px solid var(--color-border, #333843);
+  border-top: 1px solid var(--color-border, #333843);
   /* Keeps solid top line */
   border-left: none;
   border-right: none;
@@ -1003,7 +1186,8 @@ header.navbar .container {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  max-width: 1200px;
+  width: 1200px;          /* fixed overall width */
+  max-width: 100%;
   margin: 0 auto;
   gap: 0;
 }
@@ -1014,6 +1198,7 @@ header.navbar .container {
   padding-top: 24px;
   padding-bottom: 24px;
   width: var(--bento-side-w);
+  margin: 0;
 }
 
 .bento-rect {
@@ -1062,14 +1247,16 @@ header.navbar .container {
   padding-top: 24px;
   padding-bottom: 24px;
   border-left: var(--bento-border) solid var(--color-border);
-  width: auto;
+  width: 290px;        /* column width */
+  flex: 0 0 290px;
   border-radius: 0;
 }
 
 .bento-vertical.bento-wide {
   border: none;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0px;
+  width: 862px;
+  flex: 0 0 862px; 
 }
 
 .bento-row {
@@ -1118,6 +1305,7 @@ header.navbar .container {
   padding: 24px 16px;
   min-height: var(--bento-card-h);
   height: auto;
+  width: 290px;
 }
 
 /* Map Card: only bottom border */
@@ -1126,6 +1314,7 @@ header.navbar .container {
   border-top: 2px solid var(--color-border);
   border-left: none;
   border-right: none;
+  width: 290px;
   height: var(--bento-map-h) !important;
 }
 
@@ -1138,6 +1327,8 @@ header.navbar .container {
   height: var(--bento-right-card-h);
   padding-top: 24px;
   padding-bottom: 24px;
+  width: 276px;
+  flex: 0 0 276px;
 }
 
 .bento-card.skills-card.gradient {
@@ -1154,16 +1345,29 @@ header.navbar .container {
   border-top: 2px solid var(--color-border, #333843);
   border-bottom: 2px solid var(--color-border, #333843);
   box-sizing: border-box;
+  width: 586px;
+  flex: 0 0 314px;
 }
 
 /* Tools & Projects: only bottom border */
-.bento-card.tools-card.gradient,
 .bento-card.projects-card.gradient {
   border-top: none;
   border-bottom: 2px solid var(--color-border);
   border-left: none;
   border-right: none;
   height: var(--bento-right-card-h);
+  width: 276px;
+  flex: 0 0 314px;
+}
+
+.bento-card.tools-card.gradient {
+  border-top: none;
+  border-bottom: 2px solid var(--color-border);
+  border-left: none;
+  border-right: none;
+  height: var(--bento-right-card-h);
+  width: 586px;
+  flex: 0 0 314px;
 }
 
 /* Card widths */
@@ -1239,20 +1443,142 @@ header.navbar .container {
   font-weight: 400;
 }
 
-.bento-card.map-card .map-img {
-  width: 64px;
-  height: 64px;
-  display: block;
-  margin: 24px auto 8px auto;
-  object-fit: contain;
+/* --- Map Card --- */
+.bento-card.map-card.gradient {
+  position: relative;
+  overflow: hidden;
+  /* height, width, borders still controlled by --bento-map-h and bento layout */
 }
 
-.bento-card.map-card .map-desc {
-  text-align: center;
-  font-size: 16px;
-  color: var(--color-text-secondary);
-  margin: 0;
+/* Background map image */
+.map-card-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/images/kochi-map.png");
+  background-size: cover;
+  background-position: center;
+  /* darken + slightly transparent so gradient shows through */
+  opacity: 0.55;                 /* adjust 0.4–0.7 until it feels right */
+  filter: brightness(0.9) contrast(1.1);
+  mix-blend-mode: soft-light;    /* lets the gradient color influence the map */
+  pointer-events: none;
+  z-index: 0;
 }
+
+/* Text block (bottom-left) */
+.map-card-content {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 2;
+}
+
+.map-based-in {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.map-location {
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Pin wrapper (right center) */
+.map-pin-wrap {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* group above map background, below other UI */
+}
+
+/* Accent glow with noise and subtle animation */
+.map-pin-glow {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(var(--green-400-rgb, 77, 211, 136), 0.85) 0%,
+      rgba(var(--green-400-rgb, 77, 211, 136), 0.35) 35%,
+      transparent 70%
+    );
+  opacity: 1;
+  filter: blur(15px);
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Noise layer to reduce banding */
+.map-pin-glow::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.12) 0,
+      rgba(0, 0, 0, 0.12) 0.5px,
+      transparent 0.5px,
+      transparent 1px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.10) 0,
+      rgba(0, 0, 0, 0.10) 0.5px,
+      transparent 0.5px,
+      transparent 1px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 0.5px,
+      transparent 0.5px,
+      transparent 1px
+    );
+  mix-blend-mode: soft-light;
+  opacity: 0.45;
+  pointer-events: none;
+  animation: glowNoiseDrift 6s linear infinite;
+}
+
+@keyframes glowNoiseDrift {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Icon above glow */
+.map-pin-icon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* above glow */
+}
+
+.map-pin-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
 
 /* --- Experience Card Layout --- */
 .bento-card.exp-card.gradient {
@@ -1496,30 +1822,155 @@ header.navbar .container {
   outline: 2px solid var(--color-accent);
 }
 
+/* Tools Card */
+/* Card container */
+.bento-card.tools-card.gradient {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-/* Tools Card Title */
-.bento-card.tools-card .tools-title {
+/* Title */
+.tools-title {
   font-size: 16px;
   color: var(--color-text-primary);
   font-weight: 500;
-  margin: 24px 0 10px 0;
-  text-align: left;
+  margin: 0 0 24px 0;
 }
 
-.bento-card.tools-card .tools-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+/* 7×3 grid, 60px cells, 4px gaps */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  grid-auto-rows: 60px;
+  gap: 4px;
   justify-content: center;
-  margin-top: 10px;
 }
 
-.bento-card.tools-card .tools-icons img {
-  width: 34px;
-  height: 34px;
+/* SVG containers (empty slots) */
+.tool-slot-svg {
+  width: 60px;
+  height: 60px;
+  display: block;
+  pointer-events: none;
+}
+
+/* Filled slots (with icons) */
+.tool-slot {
+  width: 60px;
+  height: 60px;
+  box-sizing: border-box;
   border-radius: 8px;
-  background: var(--neutral-700);
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Frame: always a little on, brighter in window */
+.tool-slot.is-filled {
+  border: 1px solid var(--border-subtle, #2A2E32);
+  box-shadow: 0 0 2px rgba(148,153,158,0.4);        /* base soft glow */
+  background-color: transparent;
+  justify-items: center;
+  animation: toolsTileOnFrame 4s ease-out infinite;
+  animation-fill-mode: both;
+}
+
+/* Inner tile: always visible, just brightens in window */
+.tool-tile {
+  width: 52px;
+  height: 52px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #1A1D1F 0%, #23272A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 0 2px rgba(88,98,105,0.6),
+    inset 0 0 10px rgba(65,72,78,0.7);              /* base inner glow */
+  animation: toolsTileOnInner 4s ease-out infinite;
+  animation-delay: inherit;
+  animation-fill-mode: both;  /* keep initial and final states */
+}
+
+/* Icons: always fully visible */
+.tool-tile img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+/* Staggered delays: 9 filled tiles in visual order */
+.tools-grid .tool-slot.is-filled:nth-of-type(1) { animation-delay: 0s;    }
+.tools-grid .tool-slot.is-filled:nth-of-type(2) { animation-delay: 0.15s; }
+.tools-grid .tool-slot.is-filled:nth-of-type(3) { animation-delay: 0.5s;  }
+.tools-grid .tool-slot.is-filled:nth-of-type(4) { animation-delay: 0.85s; }
+.tools-grid .tool-slot.is-filled:nth-of-type(5) { animation-delay: 1.2s;  }
+.tools-grid .tool-slot.is-filled:nth-of-type(6) { animation-delay: 1.55s; }
+.tools-grid .tool-slot.is-filled:nth-of-type(7) { animation-delay: 1.9s;  }
+.tools-grid .tool-slot.is-filled:nth-of-type(8) { animation-delay: 2.25s; }
+.tools-grid .tool-slot.is-filled:nth-of-type(9) { animation-delay: 2.6s;  }
+
+/* FRAME: base glow → brighter window → back to base */
+@keyframes toolsTileOnFrame {
+  0% {
+    border-color: var(--border-subtle, #2A2E32);
+    box-shadow: 0 0 1px rgba(148,153,158,0.2);   /* dimmer base */
+    background-color: transparent;
+  }
+  35% {
+    border-color: var(--border-subtle, #2A2E32);
+    box-shadow: 0 0 1px rgba(148,153,158,0.2);
+    background-color: transparent;
+  }
+  60% { /* ON window */
+    border-color: #909AA2;
+    box-shadow: 0 0 6px #94999e;
+    background-color: transparent;
+  }
+  85% {
+    border-color: #909AA2;
+    box-shadow: 0 0 4px rgba(148,153,158,0.8);
+    background-color: transparent;
+  }
+  100% {
+    border-color: var(--border-subtle, #2A2E32);
+    box-shadow: 0 0 1px rgba(148,153,158,0.2);
+    background-color: transparent;
+  }
+}
+
+/* INNER: base glow → stronger glow window → base glow */
+@keyframes toolsTileOnInner {
+  0% {
+    filter: brightness(0.85);                    /* darker base */
+    box-shadow:
+      inset 0 0 1px rgba(88,98,105,0.4),
+      inset 0 0 6px rgba(65,72,78,0.4);
+  }
+  35% {
+    filter: brightness(0.88);
+    box-shadow:
+      inset 0 0 1px rgba(88,98,105,0.4),
+      inset 0 0 6px rgba(65,72,78,0.4);
+  }
+  60% { /* ON window */
+    filter: brightness(1.12);
+    box-shadow:
+      inset 0 0 3px #586269,
+      inset 0 0 16px #41484E;
+  }
+  85% {
+    filter: brightness(1.05);
+  }
+  100% {
+    filter: brightness(0.85);
+    box-shadow:
+      inset 0 0 1px rgba(88,98,105,0.4),
+      inset 0 0 6px rgba(65,72,78,0.4);
+  }
 }
 
 /* Projects Card */
@@ -1768,45 +2219,224 @@ header.navbar .container {
   }
 }
 
+/* ---------- CONTACT SECTION ---------- */
 
+.contact-section {
+  padding: 160px 0 0 0;       /* top padding only */
+  background: var(--color-surface);
+  display: block;
+  justify-content: center;
+  margin: 0;
+}
 
-/* Maintain accessibility, color tokens, and clean layout per spec */
+.contact-card {
+  position: relative;
+  width: 960px;
+  max-width: calc(100vw - 48px);
+  margin: 0 auto;
+}
 
-@media (max-width: 720px) {
-  :root {
-    --outer-ring-size: 240px;
-    --inner-ring-size: 154px;
-    --outer-radius: 120px;
-    --inner-radius: 77px;
-    --orbit-top: 6vh;
-    --hero-text-top: 44vh;
+/* Grid: centered panel behind content */
+.contact-grid-bg {
+  /* padding-top: 100%;           */
+  background-image: url("../assets/svg/contact-bg.svg");
+  background-size: contain;    /* show full grid without cropping */
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Header */
+.contact-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.contact-label {
+  display: inline-block;
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: var(--color-text-primary, #FAFAFA);
+  letter-spacing: 2.5px;
+  /* extra controls if needed */
+  margin-top: 76px;     /* space between label and title */
+}
+
+.contact-title {
+  margin: 26px 0 0 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+}
+
+/* ---------- Envelope + Icons ---------- */
+
+/* wrapper for everything envelope-related */
+.contact-envelope-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 554px;
+  margin: 0px auto 0 auto; /* adjust this until envelope is where you want */
+  transform: none;
+}
+
+/* BASE (1108 design width → scaled to wrapper width, centered) */
+.contact-envelope-base-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  top: 0px !important;
+}
+
+.contact-envelope-base {
+  width: 100%;
+  max-width: 1108px;
+  height: auto;
+  display: block;
+  z-index: 1;
+  transform: translateY(10%); /* push the whole base down */
+}
+
+/* FRONT GROUP (flap + icons) – 556 wide, centered on base bottom */
+.contact-envelope-front {
+  position: absolute;
+  left: 50%;
+  bottom: -9.85%;            /* negative to push flap and icons lower */
+  transform: translateX(-50%);
+  width: 556px;
+  max-width: 100%;
+  z-index: 3;
+}
+
+/* flap spans front width */
+.contact-envelope-flap {
+  position: relative;          /* relative inside .contact-envelope-front */
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 3;
+}
+
+/* icons inside front width, above flap edge */
+.contact-icons {
+  position: absolute;
+  left: 50%;
+  bottom: 32%;                 /* adjust so icons sit in flap opening */
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60%;
+  z-index: 2;
+}
+
+/* base icon style */
+.contact-icon {
+  position: absolute;
+  width: 102px;
+  height: auto;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.65));
+}
+
+/* individual icon positions/rotations */
+.icon-linkedin {
+  left: 12%;
+  bottom: 30%;
+  transform: rotate(24deg);
+}
+
+.icon-behance {
+  left: 26%;
+  bottom: 0%;
+  transform: rotate(20deg);
+}
+
+.icon-medium {
+  left: 40%;
+  bottom: -10%;
+  transform: rotate(0deg);
+}
+
+.icon-instagram {
+  right: 26%;
+  bottom: -6%;
+  transform: rotate(-18deg);
+}
+
+.icon-gmail {
+  right: 12%;
+  bottom: 30%;
+  transform: rotate(-24deg);
+}
+
+/* ---------- Responsive tweaks ---------- */
+
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 140px 0 0px 0;
   }
 
-  .hero {
-    min-height: 540px;
-    padding-bottom: 36px;
-    /* Ensure no accidental overlaps caused by smaller viewport height */
+  .contact-card {
+    width: min(100vw - 32px, 720px);
   }
 
-  .orbit-system {
-    /* Ensures orbit doesn't overlap with hero text. */
-    top: calc(var(--orbit-top) + var(--header-height));
-    max-width: 95vw;
-    height: var(--outer-ring-size);
-    z-index: 2;
-    pointer-events: none;
+  .contact-grid-bg {
+    height: 480px;
   }
 
-  .hero-content {
-    margin-top: var(--hero-text-top);
-    position: relative;
-    z-index: 11;
+  .contact-title {
+    font-size: 26px;
+  }
+
+  .contact-envelope-front {
+    width: 460px;
+  }
+
+  .contact-icon {
+    width: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-section {
+    padding: 120px 0 0px 0;
+  }
+
+  .contact-header {
+    margin-top: 56px;
+  }
+
+  .contact-title {
+    font-size: 22px;
+  }
+
+  .contact-envelope-wrap {
+    margin-top: 64px;
+  }
+
+  .contact-envelope-front {
+    width: 340px;
+  }
+
+  .contact-icon {
+    width: 80px;
   }
 }
 
 /* ----------- CUSTOM SCROLLBAR ----------- */
 .custom-scrollbar-float {
-  position: fixed;
   right: 36px;
   bottom: 36px;
   width: 38px;
@@ -1818,6 +2448,8 @@ header.navbar .container {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  transform: translateY(0);
+  position:absolute;
 }
 
 .custom-scrollbar-float.active,
