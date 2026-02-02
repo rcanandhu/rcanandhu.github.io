@@ -97,6 +97,7 @@ html {
   --ease-out: cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+
 @media (max-width: 720px) {
   :root {
     --outer-ring-size: 340px;
@@ -290,6 +291,12 @@ header.navbar .container {
   font-weight: 400;
   color: var(--neutral-150);
 }
+.show-mob{
+  display: none;
+}
+.hide-mob {
+  display: block;
+}
 
 @media (max-width: 720px) {
   .nav-group {
@@ -418,8 +425,6 @@ header.navbar .container {
     font-weight: 400;
   }
 }
-
-/* Mobile hero */
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
@@ -1128,6 +1133,12 @@ header.navbar .container {
   .ibelieve-text {
     font-size: 22px;
   }
+   .show-mob{
+    display: block;
+  }
+  .hide-mob {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1264,11 +1275,15 @@ header.navbar .container {
   width: 100%;
   border: none;
 }
+.bento-wrap {
+  display: flex;
+  width: 100%;
+  border: none;
+}
 
 .bento-card-outer {
   border-left: var(--bento-border) solid var(--color-border);
   border-right: var(--bento-border) solid var(--color-border);
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -1731,6 +1746,9 @@ header.navbar .container {
     font-size: 14px;
     padding: 6px 10px;
   }
+  .about-bento {
+    width: 100%;
+  }
 }
 
 /* Skills Card Title */
@@ -2172,9 +2190,14 @@ header.navbar .container {
     flex-direction: column;
   }
 
-  .bento-vertical,
+  .bento-vertical{
+    flex-direction: column;
+  }
   .bento-row {
     flex-direction: row;
+  }
+  .bento-wrap {
+    flex-direction: column;
   }
 
   .bento-card,
