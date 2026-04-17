@@ -384,3 +384,55 @@ function initActiveNav() {
   window.addEventListener("load", setActiveLink);
 }
 
+
+/* =====================================================
+   SCROLL EFFECT
+===================================================== */
+
+const frames = document.querySelectorAll(".project-frame")
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible")
+    }
+  })
+}, {
+  threshold: 0.15
+})
+
+frames.forEach(frame => observer.observe(frame))
+
+
+/* =====================================================
+   HIGHLIGHT ACTIVE
+===================================================== */
+
+const navLinks = document.querySelectorAll(".case-nav a")
+const sections = document.querySelectorAll(".project-section")
+
+window.addEventListener("scroll", () => {
+
+let current = ""
+
+sections.forEach(section => {
+
+const sectionTop = section.offsetTop - 200
+
+if (window.scrollY >= sectionTop){
+current = section.getAttribute("id")
+}
+
+})
+
+navLinks.forEach(link => {
+
+link.classList.remove("active")
+
+if(link.getAttribute("href").includes(current)){
+link.classList.add("active")
+}
+
+})
+
+})
